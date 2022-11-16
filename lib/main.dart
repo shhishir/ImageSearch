@@ -31,10 +31,24 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
-  void _incrementCounter() {
+  void _addByTwo() {
     setState(() {
-      _counter++;
+      _counter = _counter + 2;
+    });
+  }
+  void _subByOne() {
+    setState(() {
+      _counter = _counter - 1;
+    });
+  }
+  void _addByFour() {
+    setState(() {
+      _counter = _counter + 4;
+    });
+  }
+  void _subByTwo() {
+    setState(() {
+      _counter = _counter - 2;
     });
   }
 
@@ -60,18 +74,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       labelText: 'Search',
                     ),
                 ),),),
-              Text('$_counter',
-                style: Theme.of(context).textTheme.headline4,),
+              Padding(padding:const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+              child: Text('$_counter',
+                style: const TextStyle(
+                    backgroundColor: Colors.black12,
+                    fontSize: 40)),)
             ]),
             _addFirstRowButtons(),
             _addSecondRowButtons()
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
@@ -86,9 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: const EdgeInsets.symmetric(
                     horizontal: 65.0, vertical: 70.0),
                 primary: Colors.red[300]!,
-                // shape: const StadiumBorder(),
               ),
-              onPressed: () async {},
+              onPressed: _addByTwo,
               child: const Text("Add 2", style: TextStyle(color: Colors.black),),
             )),
             const Spacer(),
@@ -99,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     horizontal: 50.0, vertical: 70.0),
                     primary: Colors.blue[300]!,
               ),
-              onPressed: (){},
+              onPressed: _subByOne,
                 child: const Text("Subtract 1", style: TextStyle(color: Colors.black),),
               ),
             )
@@ -117,9 +128,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 65.0, vertical: 70.0),
                     primary: Colors.green[300]!,
-                    // shape: const StadiumBorder(),
                   ),
-                  onPressed: () async {},
+                  onPressed: _addByFour,
                   child: const Text("Add 4", style: TextStyle(color: Colors.black),
                   ),
                 )),
@@ -131,7 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       horizontal: 50.0, vertical: 70.0),
                   primary: Colors.amber[300]!,
                 ),
-                onPressed: (){},
+                onPressed: _subByTwo,
                 child: const Text("Subtract 2",style: TextStyle(color: Colors.black)),
               ),
             )
