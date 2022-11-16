@@ -63,8 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
               Text('$_counter',
                 style: Theme.of(context).textTheme.headline4,),
             ]),
-            _addFirstRowButton(),
-            _addSecondRowButton()
+            _addFirstRowButtons(),
+            _addSecondRowButtons()
           ],
         ),
       ),
@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  _addFirstRowButton(){
+  _addFirstRowButtons(){
     return SizedBox(
       child: Column(children: [
         Row(mainAxisAlignment: MainAxisAlignment.start, children: [
@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ]));
   }
 
-  _addSecondRowButton(){
+  _addSecondRowButtons(){
     return SizedBox(
         child: Column(children: [
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
