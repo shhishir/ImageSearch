@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Image Search',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Image search app'),
     );
@@ -71,14 +71,19 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle( color: Colors.black),
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Search',
+                      labelText: 'Search for image',
                     ),
                 ),),),
-              Padding(padding:const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+              Padding(padding:const EdgeInsets.fromLTRB(20.0, 20.0, 0.0, 0.0),
               child: Text('$_counter',
-                style: const TextStyle(
-                    backgroundColor: Colors.black12,
-                    fontSize: 40)),)
+                style: TextStyle(
+                    background: Paint()
+                      ..strokeWidth = 40.0
+                      ..color = Colors.black38
+                      ..style = PaintingStyle.stroke
+                      ..strokeJoin = StrokeJoin.round,
+                    fontSize: 20,
+                    color: Colors.white)),)
             ]),
             _addFirstRowButtons(),
             _addSecondRowButtons()
@@ -96,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 65.0, vertical: 70.0),
+                    horizontal: 65.0, vertical: 60.0),
                 primary: Colors.red[300]!,
               ),
               onPressed: _addByTwo,
@@ -107,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 50.0, vertical: 70.0),
+                    horizontal: 50.0, vertical: 60.0),
                     primary: Colors.blue[300]!,
               ),
               onPressed: _subByOne,
@@ -126,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 65.0, vertical: 70.0),
+                        horizontal: 65.0, vertical: 60.0),
                     primary: Colors.green[300]!,
                   ),
                   onPressed: _addByFour,
@@ -138,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 50.0, vertical: 70.0),
+                      horizontal: 50.0, vertical: 60.0),
                   primary: Colors.amber[300]!,
                 ),
                 onPressed: _subByTwo,
